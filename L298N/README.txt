@@ -1,5 +1,7 @@
 Librería para usar el driver de motores L298N con 6 pines de control
 
+Es válido con la misma estructura para el integrado L297D
+
 Los archivos de librería L298N.h y L298N.cpp deben estar en la carpeta de librerías personales de Arduino
 
 Las funciones de esa librería son
