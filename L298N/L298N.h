@@ -1,7 +1,7 @@
 #ifndef L298N_h
 #define L298N_h
 
-class RobotMovil {
+class L298N {
   public:  
     L298N (int IN1, int IN2, int IN3, int IN4, int ENA, int ENB);
     
