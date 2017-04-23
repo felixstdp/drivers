@@ -1,7 +1,3 @@
-ardumoto.ino
-
-Sparkfun Ardumoto Motor Control Shield library
-
 Librería de funciones de movimiento para el la shield Ardumoto de Sparkfun con Arduino UNO
 
 Los archivos de librería Ardumoto.h y Ardumoto.cpp deben estar en la carpeta de librerías personales de Arduino
