@@ -8,7 +8,7 @@ class RobotMovil {
     void forward (int velocidad_L, int velocidad_R, int tiempo);
     void reverse (int velocidad_L, int velocidad_R, int tiempo);
     void drive (int velocidad_L, int velocidad_R, int tiempo);
-    void rotate (int tiempo);
+    void rotate (int velcocidad, int tiempo);
     void brake (int tiempo);
   
     int _IN1;
