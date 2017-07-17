@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include "TB6612.h"
 
-L298N::L298N(int AIN1, int AIN2, int BIN2, int BIN2, int PWMA, int PWMB, boolean STBY)
+TB6612::TB6612(int AIN1, int AIN2, int BIN1, int BIN2, int PWMA, int PWMB, int STBY)
 {
-  
+
   // Inicializa el objeto con una distribución de patas libre
   _AIN1 = AIN1;
   _AIN2 = AIN2;
@@ -18,14 +18,14 @@ L298N::L298N(int AIN1, int AIN2, int BIN2, int BIN2, int PWMA, int PWMB, boolean
   pinMode(_BIN1, OUTPUT);
   pinMode(_BIN2, OUTPUT);
   pinMode(_PWMA, OUTPUT);
-  pinMode(_PWBB, OUTPUT);
+  pinMode(_PWMB, OUTPUT);
   pinMode(_STBY, OUTPUT);
 }
 
 void TB6612::forward(int velocidad_L, int velocidad_R, int tiempo)
 {
   digitalWrite(_STBY, HIGH);
-  
+
   digitalWrite(_AIN1, LOW);
   digitalWrite(_AIN2, HIGH);
   analogWrite(_PWMA, constrain (velocidad_L, 0, 255));
@@ -42,7 +42,7 @@ void TB6612::forward(int velocidad_L, int velocidad_R, int tiempo)
 void TB6612::reverse(int velocidad_L, int velocidad_R, int tiempo)
 {
   digitalWrite(_STBY, HIGH);
-  
+
   digitalWrite(_AIN1, HIGH);
   digitalWrite(_AIN2, LOW);
   analogWrite(_PWMA, constrain (velocidad_L, 0, 255));
@@ -59,10 +59,10 @@ void TB6612::reverse(int velocidad_L, int velocidad_R, int tiempo)
 void TB6612::brake(int tiempo)
 {
    digitalWrite(_STBY, HIGH);
-  
+
   digitalWrite(_AIN1, LOW);
   digitalWrite(_AIN2, LOW);
-  analogWrite(_PWMA, 0));
+  analogWrite(_PWMA, 0);
 
   digitalWrite(_BIN1, LOW);
   digitalWrite(_BIN2, LOW);
@@ -70,13 +70,12 @@ void TB6612::brake(int tiempo)
 
   delay (abs (tiempo));
 
-  brake (0);
 }
 
 void TB6612::rotate(int velocidad, int tiempo)
 {
   digitalWrite(_STBY, HIGH);
-  
+
   analogWrite(_PWMA, constrain (velocidad, 0, 255));
   analogWrite(_PWMB, constrain (velocidad, 0, 255));
 
@@ -92,7 +91,7 @@ void TB6612::rotate(int velocidad, int tiempo)
     digitalWrite(_AIN2, LOW);
     digitalWrite(_BIN1, LOW);
     digitalWrite(_BIN2, HIGH);
-} 
+}
 
   delay(abs(tiempo));
 
