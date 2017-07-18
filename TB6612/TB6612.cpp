@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "TB6612.h"
 
-L298N::L298N(int AIN1, int AIN2, int BIN2, int BIN2, int PWMA, int PWMB, boolean STBY)
+L298N::L298N(int AIN1, int AIN2, int BIN2, int BIN2, int PWMA, int PWMB, int STBY)
 {
   
   // Inicializa el objeto con una distribución de patas libre
