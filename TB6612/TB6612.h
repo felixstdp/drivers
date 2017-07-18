@@ -2,7 +2,8 @@
 #define TB6612_h
 
 class TB6612 {
-  public:
+
+  public:  
     TB6612 (int AIN1, int AIN2, int BIN1, int BIN2, int PWMA, int PWMB, int STBY);
 
     void forward (int velocidad_L, int velocidad_R, int tiempo);
